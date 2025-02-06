@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>  
+
+<VBox fx:controller="controller.TeamsRoundController" styleClass="background-1" alignment="CENTER" prefHeight="400" prefWidth="850" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets top="10" bottom="10" left="25" right="25" />
+    </padding>
+   
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+
+    <Label fx:id="roundLbl" styleClass="label-h2"/>
+
+    <HBox alignment="CENTER" spacing="20">
+        <ListView fx:id="teamListView" prefHeight="300" prefWidth="230">
+            <placeholder><Label text="All teams added to round."/></placeholder>
+        </ListView>
+        <VBox alignment="CENTER" spacing="20">
+            <Button fx:id="addTeamToSeasonButton" text=">>>" onAction="#addTeamToSeason" disable="true"/>
+        </VBox>
+        <TableView fx:id="seasonTv" prefHeight="300" prefWidth="320">
+        <placeholder><Label text="No teams added to round"/></placeholder>
+            <columns>
+                <TableColumn fx:id="gameTableColumn"  text="Game"/>
+                <TableColumn fx:id="team1TableColumn" text="Team-1"/>
+                <TableColumn fx:id="team2TableColumn" text="Team-2"/>
+            </columns>
+        </TableView>
+    </HBox>
+
+    <Button fx:id="arrangeSeasonButton" text="Arrange Season" onAction="#arrangeSeason" disable="true"/>
+</VBox>
